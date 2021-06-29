@@ -18,17 +18,15 @@ router.post("/create", (req, res)=>{
     .catch(err=> console.log(err))
 });
 
-router.get('/celebrities', (req, res)=>{
+router.get('/', (req, res)=>{
+
     Celebrity.find()
     .then(allCelebrities =>{
-        console.log("Hola Hola!!")
-        res.render("celebrities/celebrities.hbs",{allCelebrities})
+        console.log(allCelebrities)
+        res.render("celebrities/celebrities.hbs", {allCelebrities});
     })
     .catch(err=> console.log(err))
 })
-
-
-
 
 
 module.exports = router;
